@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Visual Studio,Debug,IDE,Tools," />
 
 
 
@@ -79,16 +79,34 @@
 
 
 
-<meta name="description" content="C++ fans">
-<meta property="og:type" content="website">
-<meta property="og:title" content="开源之家">
-<meta property="og:url" content="http://os-home.com/index.html">
+<meta name="description" content="悬停鼠标查看表达式 可以使用右侧的别针(pin)将表达式窗口固定在对应的源码上，窗口会随页面一起滚动可以拔掉表达式窗口的别针(unpin)，表达式窗口不随源码一起滚动 实时改变值 设置下一条语句 示例中：传入的bFlag为true，代码开始运行到断点处（43行），然后重新把黄色箭头拖回39行，此时bFlag的值为false，按F10会进入else分支1、跳过中间所有指令。意味着：printf(“T">
+<meta name="keywords" content="Visual Studio,Debug,IDE,Tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Studio 调试技巧">
+<meta property="og:url" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/index.html">
 <meta property="og:site_name" content="开源之家">
-<meta property="og:description" content="C++ fans">
+<meta property="og:description" content="悬停鼠标查看表达式 可以使用右侧的别针(pin)将表达式窗口固定在对应的源码上，窗口会随页面一起滚动可以拔掉表达式窗口的别针(unpin)，表达式窗口不随源码一起滚动 实时改变值 设置下一条语句 示例中：传入的bFlag为true，代码开始运行到断点处（43行），然后重新把黄色箭头拖回39行，此时bFlag的值为false，按F10会进入else分支1、跳过中间所有指令。意味着：printf(“T">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/1.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/2.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/3.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/4.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/5.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/6.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/7.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/8.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/9.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/10.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/11.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/12.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/13.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/14.png">
+<meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/15.png">
+<meta property="og:updated_time" content="2018-10-10T13:22:01.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开源之家">
-<meta name="twitter:description" content="C++ fans">
+<meta name="twitter:title" content="Visual Studio 调试技巧">
+<meta name="twitter:description" content="悬停鼠标查看表达式 可以使用右侧的别针(pin)将表达式窗口固定在对应的源码上，窗口会随页面一起滚动可以拔掉表达式窗口的别针(unpin)，表达式窗口不随源码一起滚动 实时改变值 设置下一条语句 示例中：传入的bFlag为true，代码开始运行到断点处（43行），然后重新把黄色箭头拖回39行，此时bFlag的值为false，按F10会进入else分支1、跳过中间所有指令。意味着：printf(“T">
+<meta name="twitter:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/1.png">
 
 
 
@@ -118,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://os-home.com/"/>
+  <link rel="canonical" href="http://os-home.com/2018/10/10/debugging-using-visual-studio/"/>
 
 
 
 
 
-  <title>开源之家</title>
+  <title>Visual Studio 调试技巧 | 开源之家</title>
   
 
 
@@ -143,8 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +254,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/10/debugging-using-visual-studio/" itemprop="url">Visual Studio 调试技巧</a></h1>
+          <h1 class="post-title" itemprop="name headline">Visual Studio 调试技巧</h1>
         
 
         <div class="post-meta">
@@ -354,9 +369,7 @@
       
 
       
-        
-          
-            <h5 id="悬停鼠标查看表达式"><a href="#悬停鼠标查看表达式" class="headerlink" title="悬停鼠标查看表达式"></a>悬停鼠标查看表达式</h5><img src="/2018/10/10/debugging-using-visual-studio/1.png">
+        <h5 id="悬停鼠标查看表达式"><a href="#悬停鼠标查看表达式" class="headerlink" title="悬停鼠标查看表达式"></a>悬停鼠标查看表达式</h5><img src="/2018/10/10/debugging-using-visual-studio/1.png">
 <p>可以使用右侧的别针(pin)将表达式窗口固定在对应的源码上，窗口会随页面一起滚动<br>可以拔掉表达式窗口的别针(unpin)，表达式窗口不随源码一起滚动</p>
 <h5 id="实时改变值"><a href="#实时改变值" class="headerlink" title="实时改变值"></a>实时改变值</h5><img src="/2018/10/10/debugging-using-visual-studio/2.png">
 <h5 id="设置下一条语句"><a href="#设置下一条语句" class="headerlink" title="设置下一条语句"></a>设置下一条语句</h5><img src="/2018/10/10/debugging-using-visual-studio/3.png">
@@ -393,8 +406,6 @@
 </ul>
 <h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p>1、<a href="https://www.cnblogs.com/kekec/p/5635854.html" target="_blank" rel="noopener">Visual Studio高级调试技巧</a><br>2、<a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/debugger/index" target="_blank" rel="noopener">windows-hardware debugger</a><br>3、<a href="https://docs.microsoft.com/zh-cn/visualstudio/debugger" target="_blank" rel="noopener">Visual Studio debugger</a><br>4、<a href="https://msdn.microsoft.com/zh-cn/library/jj620914.aspx" target="_blank" rel="noopener">msdn</a></p>
 
-          
-        
       
     </div>
     
@@ -409,14 +420,26 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Visual-Studio/" rel="tag"># Visual Studio</a>
+          
+            <a href="/tags/Debug/" rel="tag"># Debug</a>
+          
+            <a href="/tags/IDE/" rel="tag"># IDE</a>
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -426,10 +449,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -437,6 +461,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -457,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -518,6 +555,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#悬停鼠标查看表达式"><span class="nav-number">1.</span> <span class="nav-text">悬停鼠标查看表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实时改变值"><span class="nav-number">2.</span> <span class="nav-text">实时改变值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置下一条语句"><span class="nav-number">3.</span> <span class="nav-text">设置下一条语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编辑然后继续"><span class="nav-number">4.</span> <span class="nav-text">编辑然后继续</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方便的监视窗口"><span class="nav-number">5.</span> <span class="nav-text">方便的监视窗口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据格式化显示"><span class="nav-number">6.</span> <span class="nav-text">数据格式化显示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊变量的查看"><span class="nav-number">7.</span> <span class="nav-text">特殊变量的查看</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带注释的反汇编"><span class="nav-number">8.</span> <span class="nav-text">带注释的反汇编</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带有栈的线程窗口"><span class="nav-number">9.</span> <span class="nav-text">带有栈的线程窗口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#条件断点"><span class="nav-number">10.</span> <span class="nav-text">条件断点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存断点"><span class="nav-number">11.</span> <span class="nav-text">内存断点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存窗口"><span class="nav-number">12.</span> <span class="nav-text">内存窗口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调试器填充值"><span class="nav-number">13.</span> <span class="nav-text">调试器填充值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建本机对象的自定义视图"><span class="nav-number">14.</span> <span class="nav-text">创建本机对象的自定义视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-number">15.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -658,6 +711,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
