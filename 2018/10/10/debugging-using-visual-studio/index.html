@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/13.png">
 <meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/14.png">
 <meta property="og:image" content="http://os-home.com/2018/10/10/debugging-using-visual-studio/15.png">
-<meta property="og:updated_time" content="2018-10-10T13:22:01.687Z">
+<meta property="og:updated_time" content="2018-10-11T02:36:29.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visual Studio 调试技巧">
 <meta name="twitter:description" content="悬停鼠标查看表达式 可以使用右侧的别针(pin)将表达式窗口固定在对应的源码上，窗口会随页面一起滚动可以拔掉表达式窗口的别针(unpin)，表达式窗口不随源码一起滚动 实时改变值 设置下一条语句 示例中：传入的bFlag为true，代码开始运行到断点处（43行），然后重新把黄色箭头拖回39行，此时bFlag的值为false，按F10会进入else分支1、跳过中间所有指令。意味着：printf(“T">
@@ -376,11 +376,16 @@
 <p>示例中：传入的bFlag为true，代码开始运行到断点处（43行），然后重新把黄色箭头拖回39行，此时bFlag的值为false，按F10会进入else分支<br>1、跳过中间所有指令。意味着：printf(“True\n”)及CTest的析构函数均不会被执行<br>2、当拖动箭头到一个新的函数中时，vs会将原来的函数从栈中弹出，将新函数压入栈顶；由于新函数与上层函数没有调用关系，输出类型的参数及返回值很有可能写坏上层函数的栈数据<br>3、该调试技巧为一种事后行为，应谨慎使用，最好是只在函数内局部使用</p>
 <h5 id="编辑然后继续"><a href="#编辑然后继续" class="headerlink" title="编辑然后继续"></a>编辑然后继续</h5><img src="/2018/10/10/debugging-using-visual-studio/4.png">
 <h5 id="方便的监视窗口"><a href="#方便的监视窗口" class="headerlink" title="方便的监视窗口"></a>方便的监视窗口</h5><img src="/2018/10/10/debugging-using-visual-studio/5.png">
+<ul>
+<li>Autos – 显示当前行（执行停止的行）前面至少三行使用的变量</li>
+<li>Locals – 显示当前行所在函数中的变量</li>
+<li>Watch(1|2|3|4)) – 监视窗口</li>
+</ul>
 <h5 id="数据格式化显示"><a href="#数据格式化显示" class="headerlink" title="数据格式化显示"></a><a href="https://docs.microsoft.com/en-us/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2017" target="_blank" rel="noopener">数据格式化显示</a></h5><img src="/2018/10/10/debugging-using-visual-studio/6.png">
 <img src="/2018/10/10/debugging-using-visual-studio/7.png">
 <img src="/2018/10/10/debugging-using-visual-studio/8.png">
-<h5 id="特殊变量的查看"><a href="#特殊变量的查看" class="headerlink" title="特殊变量的查看"></a>特殊变量的查看</h5><img src="/2018/10/10/debugging-using-visual-studio/9.png">
-<p>以$和@开头的伪变量：（注：$和@两个符号是一样的，随便用哪个都可以）<br>$err – 获取GetLastError()的返回值<br>$err,hr – 获取GetLastError()的返回值并解释返回值的含义<br>@eax – 查看eax的值（64位为@rax）<br>@esp+4 – 函数的第一个参数地址<br>$handles – 查看打开的句柄数<br>$tid  – 当前线程id<br>$vframe  – 当前栈帧的ebp<br>$clk  – 以时钟周期为单位显示时间<br>$ReturnValue – 查看函数的返回值<br>Message,wm –以windows消息的宏形式显示 如：Message为15时，显示为WM_PAINT（注：Message为unsigned int类型）<br>hResult,hr –hResult为0x80070005时，显示为E_ACCESSDENIED（注：hResult为void<em>类型）<br>pArray,10 –从pArray地址起显示后续10个int类型的数据（注：pArray为int</em>类型）<br>(pArray+5),3 –从pArray[5]地址起显示后续3个int类型的数据（注：pArray为int*类型）</p>
+<h5 id="特殊变量的查看"><a href="#特殊变量的查看" class="headerlink" title="特殊变量的查看"></a><a href="https://docs.microsoft.com/zh-cn/visualstudio/debugger/pseudovariables" target="_blank" rel="noopener">特殊变量的查看</a></h5><img src="/2018/10/10/debugging-using-visual-studio/9.png">
+<p>以$和@开头的伪变量：（注：$和@两个符号是一样的，随便用哪个都可以）<br>$err – 获取GetLastError()的返回值<br>$err,hr – 获取GetLastError()的返回值并解释返回值的含义<br>@eax – 查看eax的值（64位为@rax）<br>@esp+4 – 函数的第一个参数地址<br>$handles – 查看打开的句柄数<br>$tid  – 当前线程id<br>$vframe  – 当前栈帧的ebp<br>$clk  – 以时钟周期为单位显示时间<br>$ReturnValue – 查看函数的返回值<br>Message,wm – 以windows消息的宏形式显示 如：Message为15时，显示为WM_PAINT（注：Message为unsigned int类型）<br>hResult,hr – hResult为0x80070005时，显示为E_ACCESSDENIED（注：hResult为void*类型）<br>pArray,10 – 从pArray地址起显示后续10个int类型的数据（注：pArray为int*类型）<br>(pArray+5),3 – 从pArray[5]地址起显示后续3个int类型的数据（注：pArray为int*类型）</p>
 <h5 id="带注释的反汇编"><a href="#带注释的反汇编" class="headerlink" title="带注释的反汇编"></a>带注释的反汇编</h5><img src="/2018/10/10/debugging-using-visual-studio/10.png">
 <h5 id="带有栈的线程窗口"><a href="#带有栈的线程窗口" class="headerlink" title="带有栈的线程窗口"></a>带有栈的线程窗口</h5><img src="/2018/10/10/debugging-using-visual-studio/11.png">
 <h5 id="条件断点"><a href="#条件断点" class="headerlink" title="条件断点"></a>条件断点</h5><img src="/2018/10/10/debugging-using-visual-studio/12.png">
@@ -388,7 +393,7 @@
 <p>1、在84行断点停住后，查看&amp;s.Age的地址为0x0042FCEC<br>2、点击”Debug”-“New Breakpoint”-“New Data Breakpoint…”，在弹出的对话框Address填入：0x0042FCEC，长度为4即可<br>3、当运行到88行时，由于Scores数组越界引发了s.Age的内存修改，触发了断点</p>
 <h5 id="内存窗口"><a href="#内存窗口" class="headerlink" title="内存窗口"></a>内存窗口</h5><img src="/2018/10/10/debugging-using-visual-studio/14.png">
 <h5 id="调试器填充值"><a href="#调试器填充值" class="headerlink" title="调试器填充值"></a>调试器填充值</h5><ul>
-<li>0xABABABAB : Used by Microsoft’s HeapAlloc() to mark “no man’s land” guard bytes after allocated heap memory</li>
+<li>0xABABABAB : Used by HeapAlloc() to mark “no man’s land” guard bytes after allocated heap memory</li>
 <li>0xABADCAFE : A startup to this value to initialize all free memory to catch errant pointers</li>
 <li>0xBAADF00D : Used by Microsoft’s LocalAlloc(LMEM_FIXED) to mark uninitialised allocated heap memory</li>
 <li>0xBADCAB1E : Error Code returned to the Microsoft eVC debugger when connection is severed to the debugger</li>
@@ -401,7 +406,7 @@
 </ul>
 <h5 id="创建本机对象的自定义视图"><a href="#创建本机对象的自定义视图" class="headerlink" title="创建本机对象的自定义视图"></a><a href="https://docs.microsoft.com/zh-cn/visualstudio/debugger/create-custom-views-of-native-objects" target="_blank" rel="noopener">创建本机对象的自定义视图</a></h5><ul>
 <li>autoexp.dat文件</li>
-<li>natvis文件( Visual Studio 2012 及以后)<img src="/2018/10/10/debugging-using-visual-studio/15.png">
+<li>natvis文件 (Visual Studio 2012 及以后)<img src="/2018/10/10/debugging-using-visual-studio/15.png">
 </li>
 </ul>
 <h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p>1、<a href="https://www.cnblogs.com/kekec/p/5635854.html" target="_blank" rel="noopener">Visual Studio高级调试技巧</a><br>2、<a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/debugger/index" target="_blank" rel="noopener">windows-hardware debugger</a><br>3、<a href="https://docs.microsoft.com/zh-cn/visualstudio/debugger" target="_blank" rel="noopener">Visual Studio debugger</a><br>4、<a href="https://msdn.microsoft.com/zh-cn/library/jj620914.aspx" target="_blank" rel="noopener">msdn</a></p>
